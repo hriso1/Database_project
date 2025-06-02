@@ -21,31 +21,16 @@ db.connect((err) => {
   }
   console.log("Connected to MySQL database");
 });
-app.listen(8800, () => {
+app.listen(8000, () => {
   console.log("Connected to backend!!");
 });
 app.get("/", (req, res) => {
   res.json("hello this is the backend");
 });
-///////////// Abonati
-app.get("/abonati", (req, res) => {
-  const q = "SELECT * FROM abonati";
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
-///////////// Abonamante
-app.get("/abonamente", (req, res) => {
-  const q = "SELECT * FROM abonamente";
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
-///////////// CartelePrepay
-app.get("/carteleprepay", (req, res) => {
-  const q = "SELECT * FROM carteleprepay";
+
+///////////// Numere de telefon
+app.get("/numere_telefon", (req, res) => {
+  const q = "SELECT * FROM numere_telefon";
   db.query(q, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
@@ -59,9 +44,9 @@ app.get("/contracte", (req, res) => {
     return res.json(data);
   });
 });
-///////////// Date de contact
-app.get("/datedecontact", (req, res) => {
-  const q = "SELECT * FROM datedecontact";
+///////////// clienti
+app.get("/clienti", (req, res) => {
+  const q = "SELECT * FROM clienti";
   db.query(q, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
@@ -75,17 +60,9 @@ app.get("/facturi", (req, res) => {
     return res.json(data);
   });
 });
-///////////// Numere de telefon
-app.get("/numeredetelefon", (req, res) => {
-  const q = "SELECT * FROM numeredetelefon";
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
-///////////// Servicii
-app.get("/servicii", (req, res) => {
-  const q = "SELECT * FROM servicii";
+///////////// Abonamente
+app.get("/abonamente", (req, res) => {
+  const q = "SELECT * FROM abonamente";
   db.query(q, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
@@ -94,6 +71,22 @@ app.get("/servicii", (req, res) => {
 ///////////// Tarife
 app.get("/tarife", (req, res) => {
   const q = "SELECT * FROM tarife";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+///////////// cartele
+app.get("/cartele", (req, res) => {
+  const q = "SELECT * FROM cartele";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+///////////// Servicii
+app.get("/servicii", (req, res) => {
+  const q = "SELECT * FROM servicii";
   db.query(q, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
