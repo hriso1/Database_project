@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex; /* Așază sidebar + content pe orizontală */
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #d76b00;
+  color: white;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: opacity 0.3s, background 0.3s;
+}
+
+.sidebar li:hover {
+  opacity: 0.8;
+  background-color: #ec7600;
+}
+
+/* ✅ Zona de conținut – în dreapta */
+.content {
+  flex-grow: 1; /* Ocupă tot spațiul rămas */
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+#table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #f9faff; /* un albastru foarte deschis, calm */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#table-container th,
+#table-container td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #d0d7e6; /* linie subtire gri-albastruie */
+}
+
+#table-container th {
+  background-color: #d37100; /* un albastru intens */
+  color: white;
+  font-weight: 600;
+}
+
+#table-container tr:hover td {
+  background-color: #e3e9ff; /* highlight la hover pe rând */
+  transition: background-color 0.3s ease;
+}
+
+#table-container tbody tr:last-child td {
+  border-bottom: none; /* fără linie la ultimul rând */
+}
